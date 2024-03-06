@@ -22,6 +22,7 @@ namespace AccessModife
             {
                 string cityName;
                 int population;
+                bool validCityName = false;
                 bool validPopulation = false;
 
                 do
@@ -30,17 +31,30 @@ namespace AccessModife
                     Console.Write($"Sheher adini daxil edin {i + 1}: ");
                     cityName = Console.ReadLine();
 
+             
+                    if (cityName.Length < 3 || cityName.Length > 20)
+                    {
+                        Console.WriteLine("Sheher adi minimum 3 ve maksimum 20 simvol olmalidir.");
+                        Console.WriteLine("=============================================");
+                    }
+                    else
+                    {
+                        validCityName = true;
+                    }
+
+                } while (!validCityName);
+
+                do
+                {
                     Console.WriteLine("=============================================");
                     Console.Write($"Sheher ehali sayni daxil edin{i + 1}: ");
                     string populationInput = Console.ReadLine();
 
                     if (!int.TryParse(populationInput, out population) || population <= 0)
                     {
-                     
-                       Console.WriteLine("0 Ve Ya Daha asagi deyer daxil ede bilmezsiz");
+                        Console.WriteLine("0 Ve Ya Daha asagi deyer daxil ede bilmezsiz");
                         Console.WriteLine("=============================================");
                     }
-
                     else
                     {
                         validPopulation = true;
@@ -54,4 +68,7 @@ namespace AccessModife
             Console.WriteLine("Ehali sayi: " + averagePopulation);
         }
     }
+
+
+    
 }
