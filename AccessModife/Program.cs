@@ -26,16 +26,21 @@ namespace AccessModife
 
                 do
                 {
+                    Console.WriteLine("=============================================");
                     Console.Write($"Sheher adini daxil edin {i + 1}: ");
                     cityName = Console.ReadLine();
 
+                    Console.WriteLine("=============================================");
                     Console.Write($"Sheher ehali sayni daxil edin{i + 1}: ");
                     string populationInput = Console.ReadLine();
 
                     if (!int.TryParse(populationInput, out population) || population <= 0)
                     {
-                        Console.WriteLine("0 Ve Ya Daha asagi deyer daxil ede bilmezsiz");
+                     
+                       Console.WriteLine("0 Ve Ya Daha asagi deyer daxil ede bilmezsiz");
+                        Console.WriteLine("=============================================");
                     }
+
                     else
                     {
                         validPopulation = true;
